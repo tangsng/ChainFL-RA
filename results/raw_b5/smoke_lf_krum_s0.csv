@@ -1,0 +1,16 @@
+ablate,algo,alpha,attack,comm_bytes,dataset,malicious_ratio,partition,round,round_time_s,seed,test_acc,test_loss
+full,krum,0.5,labelflip,17229600,mnist,0.3,dirichlet,1,5.916,0,0.1015,5.1109
+full,krum,0.5,labelflip,17229600,mnist,0.3,dirichlet,2,5.216,0,0.394,1.8006
+full,krum,0.5,labelflip,17229600,mnist,0.3,dirichlet,3,6.124,0,0.6115,1.3541
+full,krum,0.5,labelflip,17229600,mnist,0.3,dirichlet,4,6.0,0,0.6125,1.359
+full,krum,0.5,labelflip,17229600,mnist,0.3,dirichlet,5,5.988,0,0.7175,0.9052
+full,krum,0.5,labelflip,17229600,mnist,0.3,dirichlet,6,5.986,0,0.751,0.7564
+full,krum,0.5,labelflip,17229600,mnist,0.3,dirichlet,7,5.68,0,0.844,0.45
+full,krum,0.5,labelflip,17229600,mnist,0.3,dirichlet,8,5.16,0,0.826,0.5383
+full,krum,0.5,labelflip,17229600,mnist,0.3,dirichlet,9,5.157,0,0.8915,0.3634
+full,krum,0.5,labelflip,17229600,mnist,0.3,dirichlet,10,5.21,0,0.82,0.5851
+full,krum,0.5,labelflip,17229600,mnist,0.3,dirichlet,11,5.13,0,0.8575,0.4231
+full,krum,0.5,labelflip,17229600,mnist,0.3,dirichlet,12,5.129,0,0.8525,0.4583
+full,krum,0.5,labelflip,17229600,mnist,0.3,dirichlet,13,5.501,0,0.8375,0.5502
+full,krum,0.5,labelflip,17229600,mnist,0.3,dirichlet,14,5.663,0,0.854,0.5047
+full,krum,0.5,labelflip,17229600,mnist,0.3,dirichlet,15,5.182,0,0.8575,0.4964

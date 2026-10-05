@@ -1,0 +1,15 @@
+# Core dependencies for ChainFL-RA
+# Tested with Python 3.10 / PyTorch 2.10-2.11 (CUDA 12.x)
+
+torch>=2.0.0
+torchvision>=0.15.0
+
+numpy>=1.24
+scipy>=1.10
+pandas>=2.0
+
+scikit-learn>=1.3        # metrics / clustering utilities (FLAME reference)
+matplotlib>=3.7          # figure generation
+
+tqdm>=4.65               # progress bars
+networkx>=3.0            # optional, chain topology helpers

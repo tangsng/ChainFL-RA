@@ -1,0 +1,16 @@
+ablate,algo,alpha,attack,comm_bytes,dataset,malicious_ratio,partition,round,round_time_s,seed,test_acc,test_loss
+full,fedrola_lasi,0.5,labelflip,17229600,mnist,0.3,dirichlet,1,5.852,0,0.2725,1.9434
+full,fedrola_lasi,0.5,labelflip,17229600,mnist,0.3,dirichlet,2,5.131,0,0.6,1.1811
+full,fedrola_lasi,0.5,labelflip,17229600,mnist,0.3,dirichlet,3,5.24,0,0.687,0.8551
+full,fedrola_lasi,0.5,labelflip,17229600,mnist,0.3,dirichlet,4,5.213,0,0.7115,0.7408
+full,fedrola_lasi,0.5,labelflip,17229600,mnist,0.3,dirichlet,5,5.231,0,0.684,0.8522
+full,fedrola_lasi,0.5,labelflip,17229600,mnist,0.3,dirichlet,6,5.134,0,0.81,0.6035
+full,fedrola_lasi,0.5,labelflip,17229600,mnist,0.3,dirichlet,7,5.281,0,0.8635,0.5372
+full,fedrola_lasi,0.5,labelflip,17229600,mnist,0.3,dirichlet,8,5.217,0,0.912,0.382
+full,fedrola_lasi,0.5,labelflip,17229600,mnist,0.3,dirichlet,9,5.294,0,0.7265,0.6659
+full,fedrola_lasi,0.5,labelflip,17229600,mnist,0.3,dirichlet,10,5.183,0,0.928,0.2623
+full,fedrola_lasi,0.5,labelflip,17229600,mnist,0.3,dirichlet,11,5.229,0,0.7045,0.6672
+full,fedrola_lasi,0.5,labelflip,17229600,mnist,0.3,dirichlet,12,5.125,0,0.8185,0.5336
+full,fedrola_lasi,0.5,labelflip,17229600,mnist,0.3,dirichlet,13,5.112,0,0.7955,0.5012
+full,fedrola_lasi,0.5,labelflip,17229600,mnist,0.3,dirichlet,14,5.157,0,0.859,0.4635
+full,fedrola_lasi,0.5,labelflip,17229600,mnist,0.3,dirichlet,15,5.2,0,0.7385,0.6037

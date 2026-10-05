@@ -1,0 +1,16 @@
+ablate,algo,alpha,attack,comm_bytes,dataset,malicious_ratio,partition,round,round_time_s,seed,test_acc,test_loss
+full,krum,0.5,scale,17229600,mnist,0.3,dirichlet,1,5.969,0,0.2345,2.3523
+full,krum,0.5,scale,17229600,mnist,0.3,dirichlet,2,5.297,0,0.3975,1.7621
+full,krum,0.5,scale,17229600,mnist,0.3,dirichlet,3,5.157,0,0.6235,1.3976
+full,krum,0.5,scale,17229600,mnist,0.3,dirichlet,4,5.105,0,0.619,1.3097
+full,krum,0.5,scale,17229600,mnist,0.3,dirichlet,5,5.169,0,0.717,0.8756
+full,krum,0.5,scale,17229600,mnist,0.3,dirichlet,6,5.156,0,0.722,0.8682
+full,krum,0.5,scale,17229600,mnist,0.3,dirichlet,7,5.198,0,0.8355,0.4729
+full,krum,0.5,scale,17229600,mnist,0.3,dirichlet,8,5.197,0,0.8255,0.5496
+full,krum,0.5,scale,17229600,mnist,0.3,dirichlet,9,5.205,0,0.822,0.6052
+full,krum,0.5,scale,17229600,mnist,0.3,dirichlet,10,5.245,0,0.8055,0.7371
+full,krum,0.5,scale,17229600,mnist,0.3,dirichlet,11,5.123,0,0.8315,0.5574
+full,krum,0.5,scale,17229600,mnist,0.3,dirichlet,12,5.197,0,0.837,0.5614
+full,krum,0.5,scale,17229600,mnist,0.3,dirichlet,13,5.182,0,0.817,0.69
+full,krum,0.5,scale,17229600,mnist,0.3,dirichlet,14,5.305,0,0.835,0.6202
+full,krum,0.5,scale,17229600,mnist,0.3,dirichlet,15,5.236,0,0.833,0.6266

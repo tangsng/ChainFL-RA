@@ -1,0 +1,68 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+conda-env/
+
+# Jupyter
+.ipynb_checkpoints
+
+# Experiment data (large / intermediate)
+data_root/
+data/raw/
+*.tar
+*.tgz
+*.zip.old
+
+# Intermediate experiment batches (only the final batches are tracked)
+results/raw/
+results/raw_v2/
+results/raw_v3/
+results/e10*/
+results/e11*/
+results/e12*/
+
+# Logs and runtime artifacts
+logs/
+*.log
+*.out
+nohup.out
+runs/
+
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.bbl
+*.blg
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Model checkpoints
+*.pt
+*.pth
+*.ckpt

@@ -1,0 +1,4 @@
+Setting,FedAvg,Trimmed-mean,Median,ChainFL-RA (Ours)
+No attack,50.05 $\pm$ 1.95,44.07 $\pm$ 0.89,42.13 $\pm$ 2.09,50.22 $\pm$ 1.96
+Label-flip 30%,42.01 $\pm$ 3.89,37.38 $\pm$ 1.52,35.26 $\pm$ 1.55,43.01 $\pm$ 3.71
+Scaling 30%,8.85 $\pm$ 0.00,29.65 $\pm$ 2.81,28.03 $\pm$ 3.62,47.27 $\pm$ 4.37

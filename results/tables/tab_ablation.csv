@@ -1,0 +1,6 @@
+Variant,Label-flip,Scaling
+ChainFL-RA (full),96.69 $\pm$ 0.88,96.97 $\pm$ 0.64
+w/o reputation,79.19 $\pm$ 36.89,95.02 $\pm$ 1.27
+w/o cosine gate,70.29 $\pm$ 17.47,8.95 $\pm$ 0.00
+w/o magnitude gate,96.12 $\pm$ 1.43,77.00 $\pm$ 38.07
+plain average (w/ ledger),67.98 $\pm$ 15.65,8.95 $\pm$ 0.00
