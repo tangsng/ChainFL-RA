@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+title: "ChainFL-RA: Blockchain-Enabled Decentralized Federated Learning with Reputation-Weighted Robust Aggregation and On-Chain Auditable Incentives"
+message: "If you use this software or its experimental artifacts, please cite it as below."
+type: software
+authors:
+  - family-names: Tang
+    given-names: Song
+    affiliation: School of Electrical and Information Engineering, Tianjin University; Institute of Applied Mathematics, Hebei Academy of Sciences
+  - family-names: Jin
+    given-names: Zhigang
+    affiliation: School of Electrical and Information Engineering, Tianjin University
+  - family-names: Wang
+    given-names: Zhiqiang
+    affiliation: Institute of Applied Mathematics, Hebei Academy of Sciences; Information Security Authentication Technology Innovation Center of Hebei Province
+repository-code: "https://github.com/tangsng/ChainFL-RA"
+abstract: "ChainFL-RA unifies robust aggregation, on-chain reputation, and token settlement in decentralized federated learning under a single verifiable quality signal. Evaluated against FedAvg, Krum, FedRoLA, and FLAME on MNIST, Fashion-MNIST, and CIFAR-10 under label-flipping, update-scaling, and an adaptive Min-Max attack, it is the only method that remains robust in every setting."
+keywords:
+  - federated learning
+  - blockchain
+  - robust aggregation
+  - Byzantine robustness
+  - reputation system
+  - smart contracts
+  - incentive mechanism
+license: MIT
+commit: 36da437
