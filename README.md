@@ -5,6 +5,7 @@
 [![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.10%2F2.11-orange.svg)](https://pytorch.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.23438833-blue.svg)](https://doi.org/10.5281/zenodo.23438833)
 
 Official implementation and experimental artifacts of **ChainFL-RA**, a blockchain-enabled decentralized federated learning (FL) framework that unifies robust aggregation, on-chain reputation, and token settlement under a single verifiable quality signal.
 
@@ -215,7 +216,8 @@ If you use this code or data in your research, please cite:
   author  = {Tang, Song and Jin, Zhigang and Wang, Zhiqiang},
   journal = {PeerJ Computer Science},
   year    = {2026},
-  note    = {Submitted}
+  note    = {Submitted},
+  doi     = {10.5281/zenodo.23438833}
 }
 ```
 
