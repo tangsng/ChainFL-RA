@@ -5,19 +5,19 @@
 [![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.10%2F2.11-orange.svg)](https://pytorch.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Paper](https://img.shields.io/badge/IEEE%20Access-submitted-red.svg)](paper/)
 
 Official implementation and experimental artifacts of **ChainFL-RA**, a blockchain-enabled decentralized federated learning (FL) framework that unifies robust aggregation, on-chain reputation, and token settlement under a single verifiable quality signal.
 
 ---
 
-## Overview
+## Description
 
-Federated learning concentrates three systemic risks in one aggregator: a single point of trust, vulnerability to poisoning, and the absence of auditable credit for honest participants. Existing defenses treat these risks separately. ChainFL-RA closes the loop with one principle:
+Federated learning concentrates three systemic risks in one aggregator: a single point of trust, vulnerability to Byzantine poisoning, and the absence of auditable credit for honest participants. Existing defenses treat these risks separately. ChainFL-RA closes the loop with one principle:
 
 > **One verifiable quality signal drives the entire trust loop.**
 
 The same per-update evidence — cosine similarity to a momentum-anchored robust reference, guarded by a magnitude check — simultaneously determines:
+
 1. **Aggregation weights** (reputation-weighted robust aggregation, RAgg)
 2. **On-chain reputation** (slash-only memory with slow recovery)
 3. **Token settlement** (smart-contract rewards and penalties)
@@ -26,10 +26,9 @@ Every decision is committed to a hash-chained, validator-re-executable ledger. R
 
 ### Key results
 
-Against four baselines (FedAvg, Krum, FedRoLA, FLAME) across MNIST, Fashion-MNIST, and CIFAR-10 under label-flipping, update-scaling, and an adaptive Min-Max attack at 10–30% malicious ratios:
+Against four baselines (FedAvg, Krum, FedRoLA, FLAME) across MNIST, Fashion-MNIST, and CIFAR-10 under label-flipping, update-scaling, and an adaptive Min-Max attack at 10–30% malicious ratios, ChainFL-RA is **the only method that remains robust in every setting**: it matches the best baseline without attack, outperforms all baselines on the MNIST and CIFAR-10 poisoning matrices and under the Min-Max attack, and never collapses, whereas every baseline fails catastrophically in at least one setting.
 
-- Statistically **tied with the best baseline without attack**, and **leads 15 of 19 comparison cells**, including every MNIST poisoning cell and all seven CIFAR-10 cells.
-- Retains **96.94%–97.36%** under update-scaling where FedAvg collapses below 9.7%.
+- Retains **96.94%–97.36%** accuracy under update-scaling where FedAvg collapses below 9.7%.
 - Attains **96.78% / 93.74%** under the Min-Max attack at 20% / 30% adversaries.
 - Reaches **46.13%** on CIFAR-10 under 30% scaling vs. the best baseline's 39.86%.
 - Slash precision **> 0.92** with honest false-slash rates **≤ 0.9%**.
@@ -37,7 +36,19 @@ Against four baselines (FedAvg, Krum, FedRoLA, FLAME) across MNIST, Fashion-MNIS
 
 ---
 
-## Repository structure
+## Dataset Information
+
+Three public benchmark datasets are used. **None are stored in this repository** — all are downloaded unmodified from their original sources via `torchvision` (see [`data/README.md`](data/README.md) for details and manual setup).
+
+| Dataset | Original source | Reference | Used for |
+|---|---|---|---|
+| MNIST | [yann.lecun.com/exdb/mnist](http://yann.lecun.com/exdb/mnist/) | LeCun, Y., Bottou, L., Bengio, Y., & Haffner, P. (1998). *Gradient-based learning applied to document recognition.* Proceedings of the IEEE, 86(11), 2278–2324. | Main matrix, ablations, sensitivity |
+| Fashion-MNIST | [github.com/zalandoresearch/fashion-mnist](https://github.com/zalandoresearch/fashion-mnist) | Xiao, H., Rasul, K., & Vollmer, R. (2017). *Fashion-MNIST: A novel image dataset for benchmarking machine learning algorithms.* arXiv:1708.07747. | 30% malicious-ratio cells |
+| CIFAR-10 | [cs.toronto.edu/~kriz/cifar.html](https://www.cs.toronto.edu/~kriz/cifar.html) | Krizhevsky, A. (2009). *Learning multiple layers of features from tiny images.* Technical Report, University of Toronto. | Generalization study |
+
+---
+
+## Code Information
 
 ```
 ChainFL-RA/
@@ -73,17 +84,20 @@ ChainFL-RA/
 │   ├── b5_summary.csv         # Aggregated summary of the main matrix
 │   ├── tables/                # Rendered tables (CSV + LaTeX) used in the paper
 │   └── figures/               # All 6 paper figures (PNG, 300 dpi)
-├── scripts/
-│   ├── analyze_b5.py          # Table generation from raw CSVs
-│   ├── analyze_detection.py   # Slash precision/recall + token balance
-│   ├── redraw_figs_final.py   # Figure generation
-│   └── redraw_fig3.py
-└── paper/                     # IEEE Access LaTeX source (see below)
+└── scripts/
+    ├── analyze_b5.py          # Table generation from raw CSVs
+    ├── analyze_detection.py   # Slash precision/recall + token balance
+    ├── redraw_figs_final.py   # Figure generation
+    └── redraw_fig3.py
 ```
 
 ---
 
-## Installation
+## Requirements
+
+- Python ≥ 3.10
+- PyTorch ≥ 2.0 (CUDA optional but recommended), torchvision
+- NumPy, SciPy, pandas, matplotlib
 
 ```bash
 git clone https://github.com/tangsng/ChainFL-RA.git
@@ -91,25 +105,9 @@ cd ChainFL-RA
 pip install -r requirements.txt
 ```
 
-Requirements: Python ≥ 3.10, PyTorch ≥ 2.0 (CUDA optional but recommended), torchvision, NumPy, SciPy, pandas, matplotlib.
-
 ---
 
-## Datasets
-
-Datasets are **not** stored in this repository (they are downloaded automatically by torchvision on first use). See [`data/README.md`](data/README.md).
-
-| Dataset | Source | Used for |
-|---|---|---|
-| MNIST | `torchvision.datasets.MNIST` | Main matrix, ablations, sensitivity |
-| Fashion-MNIST | `torchvision.datasets.FashionMNIST` | 30% malicious-ratio cells |
-| CIFAR-10 | `torchvision.datasets.CIFAR10` | Generalization study |
-
-Set `--data-root` to the directory where datasets are (or will be) stored.
-
----
-
-## Reproducing the experiments
+## Usage Instructions
 
 ### 1. A single run
 
@@ -163,7 +161,18 @@ python3 redraw_fig3.py         # Fig. 3 (attack robustness bars)
 
 ---
 
-## Raw data format
+## Methodology
+
+Each training run executes the following pipeline (fully scripted and deterministic given the seed):
+
+1. **Data partitioning** — the chosen dataset is subsampled (12,000 train / 2,000 test, fixed seed) and split over *N* = 10 clients, either IID (uniform random shards) or non-IID (per-class Dirichlet allocation, α = 0.5).
+2. **Local training** — each client trains the shared model (LeNet-5 variant or compact 3-conv CNN) for 2 local epochs per round (SGD, lr 0.05, batch 32).
+3. **Attack injection** — a bounded fraction of clients (10–30%) is turned adversarial: label-flipping, update-scaling (s = −10), or an adaptive Min-Max construction against the coordinate-wise median.
+4. **Robust aggregation (RAgg)** — updates pass a dual-channel gate (cosine quality against a momentum-anchored median reference × magnitude check), then reputation-weighted tempered aggregation (Eqs. 2–6 of the paper).
+5. **On-chain settlement** — a deterministic in-process simulator (`code/chain/simchain.py`) records the model hash, per-client evidence tuple, and block hash per round; a three-zone contract settles token rewards and slashes; gas, storage bytes, and consensus latency are measured per round.
+6. **Analysis** — per-round CSVs are aggregated by `scripts/analyze_b5.py` and `scripts/analyze_detection.py` into the paper's tables; figures are rendered by `scripts/redraw_figs_final.py`.
+
+### Raw data format
 
 Each run writes a CSV with per-round records:
 
@@ -178,9 +187,7 @@ Companion files:
 - `*_chain.csv` — on-chain audit records (block hashes, gas, storage bytes, latency, settlement events)
 - `*_clients.csv` — per-client quality, weight, reputation, slash flags (used for Tables 4–5)
 
----
-
-## Mapping: raw data → paper tables
+### Mapping: raw data → paper tables
 
 | Paper table | Source data |
 |---|---|
@@ -198,19 +205,25 @@ Companion files:
 
 ---
 
-## Paper
+## Citations
 
-The manuscript (IEEE Access format, LaTeX) is in [`paper/`](paper/) together with the compiled PDF.
+If you use this code or data in your research, please cite:
 
 ```bibtex
 @article{tang2026chainflra,
   title   = {ChainFL-RA: Blockchain-Enabled Decentralized Federated Learning With Reputation-Weighted Robust Aggregation and On-Chain Auditable Incentives},
   author  = {Tang, Song and Jin, Zhigang and Wang, Zhiqiang},
-  journal = {IEEE Access},
+  journal = {PeerJ Computer Science},
   year    = {2026},
-  doi     = {10.1109/ACCESS.2026.0000000}
+  note    = {Submitted}
 }
 ```
+
+Dataset references (please also cite the original sources when using MNIST, Fashion-MNIST, or CIFAR-10):
+
+- LeCun, Y., Bottou, L., Bengio, Y., & Haffner, P. (1998). Gradient-based learning applied to document recognition. *Proceedings of the IEEE*, 86(11), 2278–2324.
+- Xiao, H., Rasul, K., & Vollmer, R. (2017). Fashion-MNIST: A novel image dataset for benchmarking machine learning algorithms. *arXiv preprint* arXiv:1708.07747.
+- Krizhevsky, A. (2009). Learning multiple layers of features from tiny images. *Technical Report*, University of Toronto.
 
 ---
 
@@ -220,14 +233,14 @@ The manuscript (IEEE Access format, LaTeX) is in [`paper/`](paper/) together wit
 - **Zhigang Jin** (corresponding) — Tianjin University
 - **Zhiqiang Wang** — Institute of Applied Mathematics, Hebei Academy of Sciences
 
----
+## Funding
 
-## Acknowledgments and funding
-
-Supported by the Hebei Provincial Science and Technology Program Project (Grant No. **25360301D**): *Research and Application Demonstration of Key Technologies for Public Data Authorization and Operation Based on Trusted Data Space*.
+Supported by the Hebei Provincial Science and Technology Program Project (Grant No. **25360301D**): *Research and Application Demonstration of Key Technologies for Public Data Authorization and Operation Based on Trusted Data Space*. The funders had no role in study design, data collection and analysis, decision to publish, or preparation of the manuscript.
 
 ---
 
-## License
+## License & Contribution Guidelines
 
 Released under the [MIT License](LICENSE). Dataset licenses follow their respective sources.
+
+Contributions are welcome via issues and pull requests; please open an issue describing the bug or proposed change before submitting a PR. Experiments must remain reproducible (fixed seeds, scripted pipelines).
