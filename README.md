@@ -45,7 +45,7 @@ Three public benchmark datasets are used. **None are stored in this repository**
 |---|---|---|---|
 | MNIST | [http://yann.lecun.com/exdb/mnist](http://yann.lecun.com/exdb/mnist/) | LeCun, Y., Bottou, L., Bengio, Y., & Haffner, P. (1998). *Gradient-based learning applied to document recognition.* Proceedings of the IEEE, 86(11), 2278–2324. | Main matrix, ablations, sensitivity |
 | Fashion-MNIST | [https://github.com/zalandoresearch/fashion-mnist](https://github.com/zalandoresearch/fashion-mnist) | Xiao, H., Rasul, K., & Vollmer, R. (2017). *Fashion-MNIST: A novel image dataset for benchmarking machine learning algorithms.* arXiv:1708.07747. | 30% malicious-ratio cells |
-| CIFAR-10 | [cs.toronto.edu/~kriz/cifar.html](https://www.cs.toronto.edu/~kriz/cifar.html) | Krizhevsky, A. (2009). *Learning multiple layers of features from tiny images.* Technical Report, University of Toronto. | Generalization study |
+| CIFAR-10 | [https://www.cs.toronto.edu/~kriz/cifar.html](https://www.cs.toronto.edu/~kriz/cifar.html) | Krizhevsky, A. (2009). *Learning multiple layers of features from tiny images.* Technical Report, University of Toronto. | Generalization study |
 
 ---
 
